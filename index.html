@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обратная связь</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0e0f0;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            background: #f0e0f0;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            padding: 10px 0;
+            background: #d0c0e0;
+            border-bottom: 1px solid #ddd;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            height: 100px;
+        }
+        .submit-btn {
+            background: #6a0dad;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .info {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+        .info a {
+            color: #007bff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Вы можете отправить сообщение через форму обратной связи:</h2>
+            <h3>You can send the message using the following feedback form:</h3>
+        </div>
+        <form action="process_form.php" method="POST">
+            <div class="form-group">
+                <label for="email">Bam e-mail / Your e-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="radio" name="code" value="code_found" required>
+                    Мой код из Readme.txt (вида 0011223344556677AAFF0):
+                </label>
+                <input type="text" name="code_value">
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="radio" name="code" value="code_lost" required>
+                    Я потерял все Readme.txt либо не смог найти ни одного
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="message">Текст сообщения / The text of the message:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Отправить / Send</button>
+        </form>
+        <div class="info">
+            <p>Информация: на данный момент используется алгоритм шифрования RSA-3072. Он является одним из самых криптостойких методов, и данные, зашифрованные им, не могут быть расшифрованы без приватного ключа. <a href="https://ru.wikipedia.org/wiki/RSA" target="_blank">Подробнее...</a></p>
+            <p>Information: the current encryption algorithm is RSA-3072. It is one of the most cryptographically strong methods and the data encrypted by it can not be decrypted without the private key. <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)" target="_blank">More...</a></p>
+        </div>
+    </div>
+</body>
+</html>
